@@ -29,6 +29,8 @@ public class Lab4 {
 		/*After the user finishes their 10 problems, display the number they got right 
 		 * and then query them if they want to play again. 
 		 * If they choose to play again, get a new level and problem type before asking 10 new problems. */
+		
+		
 		Scanner scan = new Scanner(System.in);
 		int level, problemType;
 		
@@ -37,7 +39,7 @@ public class Lab4 {
 			level = scan.nextInt();
 			
 			if(level == 1 || level == 2 || level == 3) {
-				
+				//if correct, ask for problem type
 				while(true) {
 					System.out.println("Please enter the level of your problem type. Between 1 and 4: ");
 					problemType = scan.nextInt();
