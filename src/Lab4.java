@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Lab4 {
 	public static void main(String args[]){
@@ -30,10 +31,17 @@ public class Lab4 {
 		 * and then query them if they want to play again. 
 		 * If they choose to play again, get a new level and problem type before asking 10 new problems. */
 		
+		//generate the random numbers based on level selected
+		Random rand = new Random();
+		int randLevel1 = rand.nextInt(10);
+		int randLevel2 = rand.nextInt(100);
+		int randLevel3 = rand.nextInt(1000);
 		
 		Scanner scan = new Scanner(System.in);
 		int level, problemType;
 		
+		
+		//This code block checks for correct question type and level input from user
 		while(true) {
 			System.out.print("Enter the level of the problem. Please choose a level between 1 and 3: ");
 			level = scan.nextInt();
