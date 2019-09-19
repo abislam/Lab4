@@ -33,15 +33,16 @@ public class Lab4 {
 		
 		//generate the random numbers based on level selected
 		Random rand = new Random();
-		int randLevel1 = rand.nextInt(10);
-		int randLevel2 = rand.nextInt(100);
-		int randLevel3 = rand.nextInt(1000);
-		
+		int rand1 = 0; 
+		int rand2 = 0; 
+		int rand3 = 0; 
+				
+
 		Scanner scan = new Scanner(System.in);
-		int level, problemType;
+		int level, problemType, largest, smallest, sum;
 		
 		
-		//This code block checks for correct question type and level input from user
+		//This while loop checks for correct question type and level input from user
 		while(true) {
 			System.out.print("Enter the level of the problem. Please choose a level between 1 and 3: ");
 			level = scan.nextInt();
@@ -54,6 +55,69 @@ public class Lab4 {
 					
 					if(problemType == 1 || problemType == 2 || problemType == 3 || problemType == 4) {
 						System.out.println("Problem Type " + problemType + "\nDifficulty " + level);
+						
+						//switch (level)
+						switch (level) {
+							case 1:
+								rand1 = rand.nextInt(10);
+								rand2 = rand.nextInt(10);
+								rand3 = rand.nextInt(10);
+								System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+								break;
+							case 2:
+								rand1 = rand.nextInt(100);
+								rand2 = rand.nextInt(100);
+								rand3 = rand.nextInt(100);
+								System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+								break;
+							case 3:
+								rand1 = rand.nextInt(1000);
+								rand2 = rand.nextInt(1000);
+								rand3 = rand.nextInt(1000);
+								System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+								break;
+						}
+						
+						//switch (probType)
+						switch (problemType) {
+							case 1:
+								sum = rand1 + rand2 + rand3;
+								System.out.println(sum);
+								break;
+							case 2:
+								double average = (rand1 + rand2 + rand3)/3;
+								System.out.println(average);
+								break;
+							case 3: 
+								if (rand1 > rand2 && rand1 > rand3) {
+									largest = rand1;
+									System.out.println(largest);
+									break;
+								}else if(rand2 > rand1 && rand2 > rand3) {
+									largest = rand2;
+									System.out.println(largest);
+									break;
+								}else {
+									largest = rand3;
+									System.out.println(largest);
+									break;
+								}
+							case 4:
+								if (rand1 < rand2 && rand1 < rand3) {
+									smallest = rand1;
+									System.out.println(smallest);
+									break;
+								}else if(rand2 < rand1 && rand2 < rand3) {
+									smallest = rand2;
+									System.out.println(smallest);
+									break;
+								}else {
+									smallest = rand3;
+									System.out.println(smallest);
+									break;
+								}
+											
+						}
 						break;
 					}else {
 						System.out.print("Incorrect input. Please enter 1, 2, 3 or 4 as your input: ");
