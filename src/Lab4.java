@@ -169,11 +169,19 @@ public class Lab4 {
 							
 						}
 						System.out.println("You got " + correctAnswers + " correct answers.");
-						break;
+						//break;
 					}else {
 						System.out.print("Incorrect input. Please enter 1, 2, 3 or 4 as your input: ");
 					}
 					
+					System.out.println("Press 0 to quit or press any other number to play again.");
+					userInput = scan.nextInt();
+					if(userInput == 0) {
+						System.out.println("Goodbye!");
+						break;
+					}else {
+						continue;
+					}
 				}
 				break;
 				
