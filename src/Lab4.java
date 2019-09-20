@@ -36,10 +36,11 @@ public class Lab4 {
 		int rand1 = 0; 
 		int rand2 = 0; 
 		int rand3 = 0; 
+		
 				
 
 		Scanner scan = new Scanner(System.in);
-		int level, problemType, largest, smallest, sum;
+		int level, problemType, largest, smallest, sum, userInput;
 		
 		
 		//This while loop checks for correct question type and level input from user
@@ -50,12 +51,14 @@ public class Lab4 {
 			if(level == 1 || level == 2 || level == 3) {
 				//if correct, ask for problem type
 				while(true) {
+					int correctAnswers = 0;
 					System.out.println("Please enter the level of your problem type. Between 1 and 4: ");
 					problemType = scan.nextInt();
 					
 					if(problemType == 1 || problemType == 2 || problemType == 3 || problemType == 4) {
 						System.out.println("Problem Type " + problemType + "\nDifficulty " + level);
 						
+						//for loop to ask the user 10 questions
 						for(int i = 0; i < 10; i++) {
 							//switch (level)
 							switch (level) {
@@ -83,49 +86,94 @@ public class Lab4 {
 							switch (problemType) {
 								case 1:
 									sum = rand1 + rand2 + rand3;
+									System.out.println("Calculate the sum of " + rand1 + ", " + rand2 + ", " + rand3);
+									
 									System.out.println(sum);
+									userInput = scan.nextInt();
+									if(userInput == sum) {
+										correctAnswers++;
+										System.out.println("Correct!!");
+									}else {
+										System.out.println("Incorrect.");
+									}
 									break;
 								case 2:
 									double average = (rand1 + rand2 + rand3)/3;
+									System.out.println("Calculate the average of " + rand1 + ", " + rand2 + ", " + rand3);
+									
 									System.out.println(average);
+									userInput = scan.nextInt();
+									if(userInput == average) {
+										correctAnswers++;
+										System.out.println("Correct!!");
+									}else {
+										System.out.println("Incorrect.");
+									}
 									break;
 								case 3: 
+									System.out.println("What is the largest number out of " + rand1 + ", " + rand2 + ", " + rand3 + "?");
 									if (rand1 > rand2 && rand1 > rand3) {
 										largest = rand1;
 										System.out.println(largest);
-										break;
+										userInput = scan.nextInt();
+										//break;
 									}else if(rand2 > rand1 && rand2 > rand3) {
 										largest = rand2;
+										userInput = scan.nextInt();
 										System.out.println(largest);
-										break;
+										//break;
 									}else {
 										largest = rand3;
+										
 										System.out.println(largest);
-										break;
+										userInput = scan.nextInt();
+										//break;
 									}
+									if(userInput == largest) {
+										correctAnswers++;
+										System.out.println("Correct!!");
+									}else {
+										System.out.println("Incorrect.");
+									}
+									break;
 								case 4:
+									System.out.println("What is the smallest number out of " + rand1 + ", " + rand2 + ", " + rand3 + "?");
 									if (rand1 < rand2 && rand1 < rand3) {
 										smallest = rand1;
+										
 										System.out.println(smallest);
-										break;
+										userInput = scan.nextInt();
+										//break;
 									}else if(rand2 < rand1 && rand2 < rand3) {
 										smallest = rand2;
+										
 										System.out.println(smallest);
-										break;
+										userInput = scan.nextInt();
+										//break;
 									}else {
 										smallest = rand3;
+										
 										System.out.println(smallest);
-										break;
+										userInput = scan.nextInt();
+										//break;
 									}
+									if(userInput == smallest) {
+										correctAnswers++;
+										System.out.println("Correct!!");
+									}else {
+										System.out.println("Incorrect.");
+									}
+									break;
 												
 							}
 							
 						}
-
+						System.out.println("You got " + correctAnswers + " correct answers.");
 						break;
 					}else {
 						System.out.print("Incorrect input. Please enter 1, 2, 3 or 4 as your input: ");
 					}
+					
 				}
 				break;
 				
