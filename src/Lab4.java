@@ -41,7 +41,8 @@ public class Lab4 {
 		int rand2 = 0; 
 		int rand3 = 0; 
 		
-				
+		String[] positiveFeedback = {"Well Done!", "Excellent!", "Good Job!"};
+		String[] negativeFeedback = {"Incorrect.", "Oh no that is wrong.", "Better luck next time"};
 
 		Scanner scan = new Scanner(System.in);
 		int level, problemType, largest, smallest, sum, userInput;
@@ -96,9 +97,9 @@ public class Lab4 {
 									userInput = scan.nextInt();
 									if(userInput == sum) {
 										correctAnswers++;
-										System.out.println("Correct!!");
+										System.out.println(positiveFeedback[rand.nextInt(3)]);
 									}else {
-										System.out.println("Incorrect.");
+										System.out.println(negativeFeedback[rand.nextInt(3)]);
 									}
 									break;
 								case 2:
@@ -109,9 +110,9 @@ public class Lab4 {
 									userInput = scan.nextInt();
 									if(userInput == average) {
 										correctAnswers++;
-										System.out.println("Correct!!");
+										System.out.println(positiveFeedback[rand.nextInt(3)]);
 									}else {
-										System.out.println("Incorrect.");
+										System.out.println(negativeFeedback[rand.nextInt(3)]);
 									}
 									break;
 								case 3: 
@@ -135,9 +136,9 @@ public class Lab4 {
 									}
 									if(userInput == largest) {
 										correctAnswers++;
-										System.out.println("Correct!!");
+										System.out.println(positiveFeedback[rand.nextInt(3)]);
 									}else {
-										System.out.println("Incorrect.");
+										System.out.println(negativeFeedback[rand.nextInt(3)]);
 									}
 									break;
 								case 4:
@@ -163,9 +164,9 @@ public class Lab4 {
 									}
 									if(userInput == smallest) {
 										correctAnswers++;
-										System.out.println("Correct!!");
+										System.out.println(positiveFeedback[rand.nextInt(3)]);
 									}else {
-										System.out.println("Incorrect.");
+										System.out.println(negativeFeedback[rand.nextInt(3)]);
 									}
 									break;
 												
@@ -192,6 +193,7 @@ public class Lab4 {
 			}else {
 				System.out.print("Incorrect input. Please enter 1, 2 or 3 as your input: ");
 			}
+			
 		}										
 		
 
