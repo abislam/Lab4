@@ -28,7 +28,8 @@ public class Lab4 {
 		 * (done)*/
 		
 		/*The program should provide individual feedback for each problem. 
-		 * There should be 3 different positive and 3 different negative feedbacks chosen from for each problem.*/
+		 * There should be 3 different positive and 3 different negative feedbacks chosen from for each problem.
+		 * (done)*/
 		
 		/*After the user finishes their 10 problems, display the number they got right 
 		 * and then query them if they want to play again. 
@@ -61,7 +62,7 @@ public class Lab4 {
 					problemType = scan.nextInt();
 					
 					if(problemType == 1 || problemType == 2 || problemType == 3 || problemType == 4) {
-						System.out.println("Problem Type " + problemType + "\nDifficulty " + level);
+						System.out.println("Problem Type " + problemType + "\nDifficulty " + level + "\n");
 						
 						//for loop to ask the user 10 questions
 						for(int i = 0; i < 10; i++) {
@@ -71,19 +72,19 @@ public class Lab4 {
 									rand1 = rand.nextInt(10);
 									rand2 = rand.nextInt(10);
 									rand3 = rand.nextInt(10);
-									System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+									//System.out.println(rand1 + ", " + rand2 + ", " + rand3);
 									break;
 								case 2:
 									rand1 = rand.nextInt(100);
 									rand2 = rand.nextInt(100);
 									rand3 = rand.nextInt(100);
-									System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+									//System.out.println(rand1 + ", " + rand2 + ", " + rand3);
 									break;
 								case 3:
 									rand1 = rand.nextInt(1000);
 									rand2 = rand.nextInt(1000);
 									rand3 = rand.nextInt(1000);
-									System.out.println(rand1 + ", " + rand2 + ", " + rand3);
+									//System.out.println(rand1 + ", " + rand2 + ", " + rand3);
 									break;
 							}
 							
@@ -93,52 +94,52 @@ public class Lab4 {
 									sum = rand1 + rand2 + rand3;
 									System.out.println("Calculate the sum of " + rand1 + ", " + rand2 + ", " + rand3);
 									
-									System.out.println(sum);
+									//System.out.println(sum);
 									userInput = scan.nextInt();
 									if(userInput == sum) {
 										correctAnswers++;
-										System.out.println(positiveFeedback[rand.nextInt(3)]);
+										System.out.println(positiveFeedback[rand.nextInt(3)] + "\n");
 									}else {
-										System.out.println(negativeFeedback[rand.nextInt(3)]);
+										System.out.println(negativeFeedback[rand.nextInt(3)] + "\n");
 									}
 									break;
 								case 2:
 									double average = (rand1 + rand2 + rand3)/3;
 									System.out.println("Calculate the average of " + rand1 + ", " + rand2 + ", " + rand3);
 									
-									System.out.println(average);
+									//System.out.println(average);
 									userInput = scan.nextInt();
 									if(userInput == average) {
 										correctAnswers++;
-										System.out.println(positiveFeedback[rand.nextInt(3)]);
+										System.out.println(positiveFeedback[rand.nextInt(3)] + "\n");
 									}else {
-										System.out.println(negativeFeedback[rand.nextInt(3)]);
+										System.out.println(negativeFeedback[rand.nextInt(3)] + "\n");
 									}
 									break;
 								case 3: 
 									System.out.println("What is the largest number out of " + rand1 + ", " + rand2 + ", " + rand3 + "?");
 									if (rand1 > rand2 && rand1 > rand3) {
 										largest = rand1;
-										System.out.println(largest);
+										//System.out.println(largest);
 										userInput = scan.nextInt();
 										//break;
 									}else if(rand2 > rand1 && rand2 > rand3) {
 										largest = rand2;
 										userInput = scan.nextInt();
-										System.out.println(largest);
+										//System.out.println(largest);
 										//break;
 									}else {
 										largest = rand3;
 										
-										System.out.println(largest);
+										//System.out.println(largest);
 										userInput = scan.nextInt();
 										//break;
 									}
 									if(userInput == largest) {
 										correctAnswers++;
-										System.out.println(positiveFeedback[rand.nextInt(3)]);
+										System.out.println(positiveFeedback[rand.nextInt(3)] + "\n");
 									}else {
-										System.out.println(negativeFeedback[rand.nextInt(3)]);
+										System.out.println(negativeFeedback[rand.nextInt(3)] + "\n");
 									}
 									break;
 								case 4:
@@ -146,27 +147,27 @@ public class Lab4 {
 									if (rand1 < rand2 && rand1 < rand3) {
 										smallest = rand1;
 										
-										System.out.println(smallest);
+										//System.out.println(smallest);
 										userInput = scan.nextInt();
 										//break;
 									}else if(rand2 < rand1 && rand2 < rand3) {
 										smallest = rand2;
 										
-										System.out.println(smallest);
+										//System.out.println(smallest);
 										userInput = scan.nextInt();
 										//break;
 									}else {
 										smallest = rand3;
 										
-										System.out.println(smallest);
+										//System.out.println(smallest);
 										userInput = scan.nextInt();
 										//break;
 									}
 									if(userInput == smallest) {
 										correctAnswers++;
-										System.out.println(positiveFeedback[rand.nextInt(3)]);
+										System.out.println(positiveFeedback[rand.nextInt(3)] + "\n");
 									}else {
-										System.out.println(negativeFeedback[rand.nextInt(3)]);
+										System.out.println(negativeFeedback[rand.nextInt(3)] + "\n");
 									}
 									break;
 												
@@ -178,20 +179,22 @@ public class Lab4 {
 					}else {
 						System.out.print("Incorrect input. Please enter 1, 2, 3 or 4 as your input: ");
 					}
-					
-					System.out.println("Press 0 to quit or press any other number to play again.");
-					userInput = scan.nextInt();
-					if(userInput == 0) {
-						System.out.println("Goodbye!");
-						break;
-					}else {
-						continue;
-					}
+
+					break;
 				}
-				break;
+				
 				
 			}else {
 				System.out.print("Incorrect input. Please enter 1, 2 or 3 as your input: ");
+			}
+			
+			System.out.println("Press 0 to quit or press any other number to play again.");
+			userInput = scan.nextInt();
+			if(userInput == 0) {
+				System.out.println("Goodbye!");
+				break;
+			}else {
+				continue;
 			}
 			
 		}										
